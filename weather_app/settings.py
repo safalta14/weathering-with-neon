@@ -43,7 +43,7 @@ SECRET_KEY = 'django-insecure-!b!0x3@ddcewe$$f=&n#x68m8e2gvtu=0!(&4%52b(&b%6hxu+
 # DEBUG = True
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["your-app-name.onrender.com", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["weathering-with-neon.onrender.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
