@@ -37,6 +37,7 @@ def calling(request):
                     print(f"Error during city save: {e}")
 
                 weather_info = {
+                    'city': city_name,
                     'temperature': f"{data['main']['temp']}C",
                     'humidity': data['main']['humidity'],
                     'feels_like': data['main']['feels_like'],
@@ -45,7 +46,8 @@ def calling(request):
                     'sunrise': datetime.fromtimestamp(data['sys']['sunrise']).strftime('%H:%M:%S'),
                     'sunset': datetime.fromtimestamp(data['sys']['sunset']).strftime('%H:%M:%S'),
                     'description': [w['description'] for w in data['weather']]
-                }
+                #     'background': f"https://source.unsplash.com/1600x900/?(city_name)" 
+                 }
                 return JsonResponse(weather_info)
             else:
                 print(f"Weather API failed for city: {city_name}")
