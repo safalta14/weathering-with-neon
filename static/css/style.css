@@ -5,104 +5,129 @@
    position:relative;
    font-family: "Mountains of Christmas", serif;
    /* background:#f5f5f5; */
-   background:linear-gradient(to bottom, #f5f5f5, #ffffff);
+   /* background:linear-gradient(to bottom, #f5f5f5, #ffffff); */
     margin:0;
     padding:0;
     height: 100%;
  }
- body::before{
-   content: '';
-    /* background-image:url("./images/img\ 5.jpg"); */
-   background-size: 100% 100%;
-    height: 100vh;
-     width:100vw;
-    z-index:-1;
-    /* top:0;
-    left:0; */
-    position: absolute;
-    opacity: 0.9;
 
+ #background-layer{
+    height: 100vh;
+    width:100vw;
+   
+    top:0;
+    left:0;
+    position:fixed;
+    
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+    url("../images/weat.jpg") center/cover no-repeat;
+
+    z-index:-1;
+    opacity: 1;
+}
+
+ .bg{
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
  }
+
  .heading{
-   /* display: block; */
+    /* display: block;  */
    text-align: center;
    background: linear-gradient(to right, rgba(238, 0, 0, 0.87), rgba(245, 161, 4, 0.959), #f7f704, rgb(3, 245, 3), blue, rgb(75, 0, 130), rgb(241, 3, 241));
    -webkit-background-clip: text;   /* clip gradient to text */
   -webkit-text-fill-color: transparent; /* make text transparent so gradient shows */
    background-clip:text;
-
-
  }
  
  /* for middle div  */
-#center{             
+ #center{       
+    position:relative;
+           
     display: flex;
     flex-direction: column;
-    position:absolute;
     justify-content: center;
 
-    height:420px;
-    width: 330px;
+    height:450px;
+    width:300px;
     
     padding: 10px 10px;  
-    
-    top:50%;
+    top:40%;      /*.......*/
     left: 50%; 
 
-    transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);   
    
-    background: linear-gradient(to right,rgba(38, 132, 240, 0.05),rgba(35, 127, 231,0.05));
-    background-size: 100% 100%;
-    border-radius: 25px;
+    /* background: linear-gradient(to right,rgba(38, 132, 240, 0.05),rgba(35, 127, 231,0.05)); */
     
-     opacity:1;
-    /* z-index:1; */
+    border-radius: 25px; 
     gap: 15px; 
-    color: #FFFF00;
+    color: #FFFF00;  
 }
 
-#centering{
-    display: flex;
+
+
+.box-style{
+   position: relative;
+   width:250px;
+   height:40px;
+}
+
+.box_style #centering{
     justify-content: center;
     position:relative; 
     
     top:5px;
 
-    width:300px;
-    height: 50px;
+    width:250px;
+    height: 40px;
  
     margin-left:10px;
     gap:10px;
+    padding-left:10px;
 
-    /* font-weight:bolder; */
+    font-weight:bolder;
     font-size:16px;
     font-weight: bold;
 
     outline: none;
-    border-color: aquamarine;
-    box-shadow: 0 0 5px aquamarine;
-    border-radius: 18px;
+    border-color: rgb(211, 216, 243); 
     
-  
+    border-radius: 18px;
 }
+
+#centering:focus {
+   box-shadow: 0 0 5px rgb(211, 216, 243);
+   transition: 0.2s;
+}
+
+.box_style i {
+    position: absolute;
+    left:68%; 
+    top:6.5%;
+     color: #050000;
+    font-size: 18px;
+    cursor: pointer;
+}  
+  
+
  .submitting{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    /* margin-bottom:40px; */
     margin-left:10%;
 
     height:45px;
     width: 50px;
 
     border-radius: 12px;
-    box-shadow: 0 0 5px aquamarine;
-    border-color: aquamarine;
+    
+    border-color: rgb(211, 216, 243);;
 
-    /* opacity: 1; */
-    /* gap:10px; */
+   
  }
 
  .highlight{
@@ -132,14 +157,9 @@
     h2{
      margin-top: 0;      /* remove the big top gap */
      margin-bottom: 1px; /* small gap below city name */
-     font-weight: bold;
-  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-}
+     font-weight: bold; 
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
  
 
- .bg{
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
- }

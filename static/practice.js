@@ -1,3 +1,19 @@
+// document.addEventListener("DOMContentLoaded", function() {
+const form=document.getElementById("center");
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  getWeather();
+
+});
+
+const search=document.getElementById("search_icon")
+search.addEventListener("click",function(e){
+ getWeather();
+});
+
+
+
+
 async function getWeather() {
     const city = document.getElementById("centering").value;
     if (!city) 
@@ -46,9 +62,11 @@ async function background(city,access_key){
   try{
     const res= await fetch(url)
     const data=await res.json()
+
     if(data.results.length>0){
       const imgurl=data.results[0].urls.regular //gets the image full uril with high quality pictures
-      document.body.style.backgroundImage=`url(${imgurl})`
+      const bg=document.getElementById("background-layer");
+      bg.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${imgurl})`;
       document.body.style.backgroundSize="cover"
       document.body.style.backgroundRepeat="no-repeat"
       document.body.style.backgroundPosition="center"
